@@ -1,0 +1,33 @@
+page-settings {
+    .toolbar-background-md, .toolbar-background-ios {
+        background-color: #71AB44 !important;
+    }
+    .bar-button-default, .toolbar-title {
+        color: #fff !important;
+    }
+    ion-content {
+        background-color: #ebefe8 !important;
+        color: #434a54 !important;
+        .scroll-content {
+            padding: 20px 0 0 0 !important;
+        }
+        .title {
+            padding-left: 20px;
+            padding-bottom: 10px;
+        }
+        ion-list {
+            ion-item {
+                width: auto !important;
+                margin: 0 10px !important;
+                padding: 10px !important;
+                .item-inner {
+                    border-bottom: none !important;
+                }
+                .sub-title {
+                    font-size: 12px;
+                }
+                border-bottom: 1px solid #ebefe8 !important;
+            }
+        }
+    }
+}

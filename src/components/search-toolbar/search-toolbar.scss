@@ -1,0 +1,27 @@
+search-toolbar {
+  .search-toolbar {
+    background: #fff;
+    color: #434a54;
+    height: 40px;
+    width: 100vw;
+    padding-left: 14px;
+    padding-right: 10px;
+    position: relative;
+  }
+
+  .search-toolbar-title {
+    line-height: 40px;
+    font-size: 0.9em;
+    vertical-align: center;
+    float: left;
+    font-style: bold;
+  }
+
+  .search-toolbar-filter-button {
+    font-size: 0.9em;
+    margin-top: 10px;
+    float: right;
+    width: 30px;
+    height: 20px;
+  }
+}

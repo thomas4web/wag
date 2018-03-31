@@ -1,0 +1,133 @@
+$primary: #71AB44;
+$ligtGray: #ededed;
+
+page-chat {
+    .toolbar-background-md, .toolbar-background-ios {
+        background-color: #71AB44 !important;
+    }
+    .bar-button-default, .toolbar-title {
+        color: #fff !important;
+    }
+    // .chat-msg {
+    //     input {
+    //         color: #fff;
+    //         border-bottom: 1px dotted #fff;
+    //     }
+    // }
+
+    .input-cover {
+      position: static;
+    }
+
+    ion-item {
+      &.received {
+        p.message-content {
+          background: $ligtGray;
+          color: black;
+        }
+      }
+
+      &.sent {
+        p.message-content {
+          background: $primary;
+          color: white;
+        }
+      }
+
+      &.session-start {
+        margin-top: 5px;
+        margin-bottom: 0px;
+      }
+
+      .message-content {
+        padding: 12px 15px;
+        border-radius: 20px;
+        width: auto;
+        max-width: calc(100% - 150px);
+      }
+    }
+
+    .item {
+        padding: 0px;
+    }
+
+    .back-arrow {
+        font-size: 2.8rem;
+    }
+
+    .list {
+        margin: 0px;
+    }
+
+    ion-label {
+        margin: 0px !important;
+    }
+
+    .item-md.item-block .item-inner {
+        padding-right: 0px;
+    }
+
+    .add-image-button {
+        font-size: 20px;
+        background: transparent;
+    }
+
+    .add-image-icon {
+        color: #005677;
+    }
+
+    .send-button {
+        display:block;
+        width:25px;
+        height:25px;
+        line-height:25px;
+        // border: 2px solid #f5f5f5;
+        border-radius: 50%;
+        // color: #f2f2f2;
+        color: $primary;
+        text-align:center;
+        text-decoration:none;
+        // background-color: #005677;
+        background-color: #f2f2f2;
+        font-weight:bold;
+        padding: 0px;
+        margin-right: 5px;
+    }
+
+    .toolbar-background {
+        border-width: 0px !important;
+    }
+
+    ion-buttons {
+        margin: 0px !important;
+    }
+
+
+    .send-icon {
+        font-size: 1.8rem;
+        padding-right: 6px;
+        color: $primary;
+    }
+
+    .text-input {
+        margin-left: 5px;
+        // margin-bottom: 0px;
+    }
+
+    textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        border: 1px solid;
+        border-radius: 10px;
+        margin-left: 10px;
+        border-color: lightgrey;
+        margin-right: 10px;
+        margin-top: 5px;
+        background-color: #f8f8f8;
+        margin-bottom: 5px;
+        width: 94%;
+    } 
+}

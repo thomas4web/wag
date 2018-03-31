@@ -1,0 +1,16 @@
+<ion-content no-padding>
+  <search-toolbar (searchOptionsEvent)="showSearchOptions()"></search-toolbar>
+  <ion-list no-padding no-lines *ngIf="results">
+    <ion-card no-padding *ngFor="let result of results">
+      <ion-item (tap)="showDetails(result)">
+          <ion-avatar item-left>
+            <img *ngIf="result.type === 'playground'" src="{{ result.object.image }}">
+            <img *ngIf="result.type === 'profile'" src="{{ result.object.avatar }}">
+          </ion-avatar>
+          <h2>{{result.object.name}}</h2>
+          <p *ngIf="result.type === 'playground'">Playground</p>
+          <p *ngIf="result.type === 'profile'">Profile</p>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>

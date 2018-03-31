@@ -1,0 +1,18 @@
+<ion-header no-border>
+  <wagdag-header [(title)]="currentTabTitle" [search]="true" (searchEvent)="onSearchResults($event)" (cancelEvent)="onSearchCancel($event)"></wagdag-header>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-tabs tabsPlacement="top" tabsLayout="title-hide" *ngIf="!showSearchTabs">
+      <ion-tab [root]="playgroundsRoot" tabTitle="Playgrounds" tabIcon="wd-checkin" (ionSelect)="changeTitle('Playgrounds')"></ion-tab>
+      <ion-tab [root]="newsFeedRoot" tabTitle="Wagger" tabIcon="wd-home" (ionSelect)="changeTitle('Wagger')"></ion-tab>
+      <ion-tab [root]="favoritesRoot" tabTitle="Favorites" tabIcon="wd-heart" (ionSelect)="changeTitle('Favorites')"></ion-tab>
+      <ion-tab [root]="profileRoot" tabTitle="Profile" tabIcon="wd-dog" (ionSelect)="changeTitle('Profile')"></ion-tab>
+  </ion-tabs>
+
+  <ion-tabs tabsPlacement="top" *ngIf="showSearchTabs">
+      <ion-tab [root]="allResults" tabTitle="All" [rootParams]="searchResults"></ion-tab>
+      <ion-tab [root]="profileResults" tabTitle="Profiles" [rootParams]="searchResults"></ion-tab>
+      <ion-tab [root]="playgroundResults" tabTitle="Playgrounds" [rootParams]="searchResults"></ion-tab>
+  </ion-tabs>
+</ion-content>

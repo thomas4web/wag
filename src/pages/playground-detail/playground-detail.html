@@ -1,0 +1,82 @@
+<!--
+  Generated template for the PlaygroundDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{ playground?.name }}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Close</span>
+        <ion-icon class="close" name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row class="box-cover" [style.background-image]="playground?.image ? 'url(' + playground.image + ')' : null"></ion-row>
+
+  <div no-padding>
+    <div no-padding>
+      <div class="row">
+        <div class="col col-100">
+          <ion-row>
+            <ion-col text-center>
+              <button ion-button *ngIf="playground.is_favorite" clear color="primary" item-right (tap)="toggleFavorite()">
+                <ion-icon name="heart"></ion-icon>
+              </button>
+              <button ion-button *ngIf="!playground.is_favorite" clear color="gray" item-right (tap)="toggleFavorite()">
+                <ion-icon name="heart"></ion-icon>
+              </button>
+              <button ion-button clear color="primary" item-right (tap)="checkIn()">
+                <ion-icon name="paw"></ion-icon>
+              </button>
+              <button ion-button clear color="primary" item-right (tap)="share()">
+                <ion-icon name="share"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+
+    <div class="block-title">Recents {{ !playground.checkingins.length ? '' : '(' + playground.checkingins.length + ')' }}</div>
+    <div no-padding>
+      <div *ngIf="!playground.checkingins.length" text-center padding>
+        There is no dog playing here
+      </div>
+      <ion-row padding style="overflow-x: scroll; flex-wrap: nowrap;" *ngIf="playground.checkingins.length">
+        <ion-col col-3 text-center *ngFor="let checkin of playground.checkingins">
+          <div style="position: relative">
+            <img src="{{ checkin.profile.avatar }}" class="avatar-image" (tap)="showProfile(checkin.profile)">
+            <div class="avatar-name" (tap)="showProfile(profile)">{{ checkin.profile.name }}</div>
+            <div class="checkin-time">({{ checkin.last_checkin | dateHumanReadable }})</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="block-title">Logged in {{ !playground.checkedin_profiles.length ? '' : '(' + playground.checkedin_profiles.length + ')' }}</div>
+    <div no-padding>
+      <ion-row padding style="overflow-x: scroll; flex-wrap: nowrap;" *ngIf="playground.checkedin_profiles">
+        <ion-col col-3 text-center *ngFor="let profile of playground.checkedin_profiles">
+          <div style="position: relative">
+            <img src="{{ profile.avatar }}" class="avatar-image" (tap)="showProfile(profile)">
+            <div class="avatar-name" (tap)="showProfile(profile)">{{ profile.name }}</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="block-title">Map</div>
+    <div padding style="width: 100vw; height: 40vh">
+      <google-maps [options]="mapComponentOptions" [mapOptions]="defaultMapOptions" (onInitDoneEmitter)="showMarker()"></google-maps>
+    </div>
+  </div>
+</ion-content>

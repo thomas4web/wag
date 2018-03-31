@@ -1,0 +1,71 @@
+playground-card {
+  ion-card {
+    text-align: left;
+  }
+
+  .card-header {
+    position: relative;
+    height: 160px;
+  }
+
+  .card-image {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card-title {
+    position: absolute;
+    bottom: 6%;
+    left: 4%;
+    font-size: 1.4em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px #000000;
+  }
+
+  .green-bg {
+    background-color: #71ab44;
+  }
+
+  .playground-card {
+    margin-left: 18px;
+  }
+
+  .avatar-image {
+    height: 40px;
+    width: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px gray;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .avatar-white-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .avatar-name {
+    font-size: 1.0em;
+    width: 100%;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .avatar-more {
+    position: absolute;
+    bottom: 52%;
+    right: 0%;
+    font-size: 1.0em;
+    width: 100%;
+    color: #71ab44;
+  }
+}

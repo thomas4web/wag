@@ -1,0 +1,14 @@
+page-playgrounds {
+  .content {
+    background-color: #ebefe8;
+  }
+
+  .fixed-outside {
+      position: absolute;
+      bottom: 14%;
+      left: 2%;
+      width: 96%;
+      height: 80px;
+      z-index: 1;
+  }
+}

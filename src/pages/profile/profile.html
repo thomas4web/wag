@@ -1,0 +1,113 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+  <ion-grid style="padding: 0">
+    <ion-row class="box-cover" [style.background-image]="userProfile?.cover ? 'url(' + userProfile.cover + ')' : null" [hidden]="profileTab == 'friends' || profileTab == 'friendRequest'"></ion-row>
+    <div class="box-profile" *ngIf="userProfile">
+      <ion-row class="box-avatar" [hidden]="profileTab == 'friends' || profileTab == 'friendRequest'">
+        <ion-col class="wrapper-avatar">
+          <div class="box-upload">
+            <img src="{{userProfile.avatar}}" class="img-circle avatar"/>
+          </div>
+          <p class="title">{{userProfile.name}}</p>
+        </ion-col>
+      </ion-row>
+      <div class="row">
+        <div class="col col-100">
+          <ion-segment [(ngModel)]="profileTab" color="primary" (ionChange)="segmentChange($event)">
+            <ion-segment-button value="profile">
+              Profile
+            </ion-segment-button>
+            <ion-segment-button value="friends" (tap)="showFriendList()">
+              Friends
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+      </div>
+      <div [ngSwitch]="profileTab">
+        <div *ngSwitchCase="'profile'">
+          <div class="row">
+            <div class="col col-100">
+              <div class="row box box-latest-location">
+                <div class="col col-40 title">Birth Date</div>
+                <div class="col col-60 text"><span>{{userProfile.dob | date: 'dd/MM/yyyy'}}</span></div>
+              </div>
+              <div class="row box box-gender">
+                <div class="col col-40 title">Gender</div>
+                <div class="col col-60 text"><span style="text-transform: capitalize">{{userProfile.gender}}</span>
+                </div>
+              </div>
+              <div class="row box">
+                <div class="col col-40 title">About</div>
+                <div class="col col-60 text"><span style="text-transform: capitalize">{{userProfile.about}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-100">
+              <div class="row box box-latest-location">
+                <div class="col col-40 title">Breed</div>
+                <div class="col col-60 text"><span>{{userProfile.breed.name}}</span></div>
+              </div>
+              <div class="row box box-checkin">
+                <div class="col col-40 title">Health</div>
+                <div class="col col-60 text"><span>{{userProfile.health.name}}</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" *ngIf="lastCheckIn">
+            <div class="col col-100">
+              <div class="row box box-latest-location">
+                <div class="col col-40 title">Latest location</div>
+                <div class="col col-60 text"><span>{{ lastCheckIn.playground.name }}</span></div>
+              </div>
+              <div class="row box box-checkin">
+                <div class="col col-40 title">Check in</div>
+                <div class="col col-60 text"><span>{{ lastCheckIn.last_checkin | dateHumanReadable }}</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" *ngIf="top3CheckIns">
+            <div class="col col-100">
+              <div class="row box" *ngFor="let checkin of top3CheckIns; let i = index">
+                <div class="col col-40 title"><span *ngIf="!i">Top 3 check ins</span></div>
+                <div class="col col-60 text"><span>{{checkin.playground.name}}</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" *ngIf="!friendProfile">
+            <div class="col col-100" style="text-align: right">
+              <img class="w50" src="assets/images/icon-Edit.png" (tap)="editProfile()"/>
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="'friends'">
+          <!--<div *ngIf="friends.length == 0">No friends found.</div>-->
+          <ion-list  no-lines>
+            <ion-item *ngFor="let friend of friends" (tap)="showProfile(friend)">
+              <ion-avatar item-left (tap)="showProfile(friend)">
+                <img src="{{friend.friend_profile?.avatar}}">
+                <ion-icon class="fa fa-circle" color="primary"></ion-icon>
+              </ion-avatar>
+              <h2>{{friend.friend_profile?.name}}</h2>
+              <button ion-button color="primary" item-right (tap)="chatWith(friend)">
+                <ion-icon name="chatbubbles"></ion-icon>
+                <span style="margin-left: 10px">Message</span>
+              </button>
+            </ion-item>
+          </ion-list>
+        </div>
+      </div>
+
+    </div>
+  </ion-grid>
+</ion-content>

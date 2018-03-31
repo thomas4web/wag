@@ -1,0 +1,13 @@
+<!-- Generated template for the MapPlaygroundDetailComponent component -->
+<ion-card no-padding class="map-playground-card">
+  <ion-row (tap)="showDetail(playground)">
+    <ion-col class="map-playground-card-column">
+      <img [attr.src]="playground.image || 'assets/images/no-image-playground.png'" class="playground-image" item-left>
+    </ion-col>
+    <ion-col>
+      <h5 class="map-playground-title">{{ playground?.name }}</h5>
+      <p class="map-playground-desc" *ngIf="!playground.checkingin || playground.checkingin?.total == 0">No recent playgrounds</p>
+      <p class="map-playground-desc" *ngIf="playground.checkingin?.total > 0">Recent: {{ playground.checkingin.from | amTimeAgo }}</p>
+    </ion-col>
+  </ion-row>
+</ion-card>

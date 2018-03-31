@@ -1,0 +1,99 @@
+page-home {
+    color: #434a54 !important;
+    // .tabs-md {
+    //     height: auto !important;
+    // }
+
+    .toolbar-background, .toolbar-background-md {
+        background-color: #71AB44 !important;
+        border-bottom: 1px solid #66993e !important;
+    }
+    .bar-button-default, .toolbar-title {
+        color: #fff !important;
+    }
+    // .tab-button[aria-selected=true] . tabs-md .tab-button-icon
+
+    .tabbar {
+        background-color: #71AB44 !important;
+
+    }
+
+    .tab-button[aria-selected=true] {
+        background-color: #66993e !important;
+        color: #fff !important;
+
+    }
+
+    .tab-button[aria-selected=false] {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+}
+
+.tab-button[aria-selected=true] {
+    .ion-ios-wd-home,
+    .ion-ios-wd-home-outline,
+    .ion-md-wd-home {
+        content: url('../assets/images/icon-home-active.png');
+    }
+
+    .ion-ios-wd-checkin,
+    .ion-ios-wd-checkin-outline,
+    .ion-md-wd-checkin {
+        content: url('../assets/images/icon-pin-active.png');
+    }
+
+    .ion-ios-wd-heart,
+    .ion-ios-wd-heart-outline,
+    .ion-md-wd-heart {
+        content: url('../assets/images/icon-heart-active.png');
+    }
+
+    .ion-ios-wd-dog,
+    .ion-ios-wd-dog-outline,
+    .ion-md-wd-dog {
+        content: url('../assets/images/icon-paw-active.png');
+    }
+}
+
+.ion-ios-wd-home,
+.ion-ios-wd-home-outline,
+.ion-md-wd-home {
+  content: url('../assets/images/icon-home-normal.png');
+  height: 32px;
+  padding: 6px 4px 2px;
+  margin: 5px;
+}
+
+.ion-ios-wd-checkin,
+.ion-ios-wd-checkin-outline,
+.ion-md-wd-checkin {
+  content: url('../assets/images/icon-pin-normal.png');
+  height: 32px;
+  padding: 6px 4px 2px;
+  margin: 5px;
+}
+
+.ion-ios-wd-heart,
+.ion-ios-wd-heart-outline,
+.ion-md-wd-heart {
+  content: url('../assets/images/icon-heart-normal.png');
+  height: 32px;
+  padding: 6px 4px 2px;
+  margin: 5px;
+}
+
+.ion-ios-wd-dog,
+.ion-ios-wd-dog-outline,
+.ion-md-wd-dog {
+  content: url('../assets/images/icon-paw-normal.png');
+  height: 32px;
+  padding: 6px 4px 2px;
+  margin: 5px;
+}
+
+.tabs-ios .tab-button-icon {
+    min-width: 0 !important;
+}
+a.tab-button {
+    border-left: 1px solid #66993e;
+}

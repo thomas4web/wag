@@ -1,0 +1,69 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding class="loginForm no-scroll">
+  <div class="container">
+    <ion-grid class="login-block" *ngIf="auth_status !== 'OK'">
+      <ion-row>
+        <ion-col class="text-center">
+          <img src="assets/images/login_logo.png" />
+        </ion-col>
+      </ion-row>
+
+      <!--
+      <ion-row class="pt20">
+      <ion-col>
+      <input placeholder="Username"/>
+      </ion-col>
+      </ion-row>
+
+      <ion-row>
+      <ion-col>
+      <input placeholder="Password" type="password">
+      </ion-col>
+      </ion-row>
+
+      <ion-row>
+      <ion-col class="text">
+      Forgot password?
+      </ion-col>
+      </ion-row>
+
+      <ion-row>
+      <ion-col>
+      <button ion-button block color="default" (tap)="showMainScreen()">LOGIN</button>
+      </ion-col>
+      </ion-row>
+      -->
+
+      <ion-row>
+        <ion-col class="text">
+          Login using
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col id="gp-box">
+          <button ion-button class="icon-left" color="positive" (tap)="login('google')">
+            <img src="assets/images/icon-google-plus-white.png"/>
+            GOOGLE
+          </button>
+        </ion-col>
+        <ion-col id="fb-box">
+          <button ion-button class="icon-left" color="positive" (tap)="login('facebook')">
+            <img src="assets/images/icon-facebook-white.png"/>
+            FACEBOOK
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+  <div *ngIf="auth_status == 'OK'">
+    <label><button ion-button (tap)="signOut()" color="error">Sign Out</button>{{loggedInUser}}</label>
+    <div><button ion-button (tap)="goToMainScreen()" color="error">Home</button></div>
+  </div>
+</ion-content>

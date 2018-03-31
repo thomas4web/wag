@@ -1,0 +1,42 @@
+<!-- Generated template for the PlaygroundCardComponent component -->
+<ion-card no-padding class="playground-card">
+    <div class="card-header" style="position: relative">
+      <img class="card-image" src="{{ playground.image }}" (tap)="showPlayground(playground)"/>
+      <div class="card-title">{{ playground.name }}</div>
+    </div>
+    <ion-card-content style="background-color: #71ab44">
+      <div class="dogs-panel">
+          <ion-row no-padding>
+            <ion-col text-center *ngFor="let profile of playground.checkedin_profiles">
+              <div style="position: relative">
+                <img src="{{ profile.avatar }}" class="avatar-image" (tap)="showProfile(profile)">
+                <div class="avatar-name" (tap)="showProfile(profile)">{{ profile.name }}</div>
+              </div>
+            </ion-col>
+            <ion-col text-center *ngIf="playground.checkedin_profiles.length > 4">
+              <div>
+                <img src="assets/images/white-image.png" class="avatar-white-image">
+                <div class="avatar-more">+ {{playground.checkedin_profiles.length - 4}}</div>
+              </div>
+            </ion-col>
+          </ion-row>
+      </div>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col text-right>
+        <button ion-button clear color="primary" item-right (tap)="showOnMap(playground)">
+          <ion-icon name="pin"></ion-icon>
+        </button>
+        <button ion-button *ngIf="playground.is_favorite" clear color="primary" item-right (tap)="toggleFavorite(playground)">
+          <ion-icon name="heart"></ion-icon>
+        </button>
+        <button ion-button *ngIf="!playground.is_favorite" clear color="gray" item-right (tap)="toggleFavorite(playground)">
+          <ion-icon name="heart"></ion-icon>
+        </button>
+        <button ion-button clear color="primary" item-right (tap)="checkIn(playground)">
+          <ion-icon name="paw"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+</ion-card>

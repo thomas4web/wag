@@ -1,0 +1,95 @@
+page-login {
+  .loginForm {
+        //background-image: url('login-background.jpg')
+        background-image: url('../assets/images/login-bg.jpg');
+        // background: url('../../img/getstart.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+
+        .white-btn {
+            background-color: #fff;
+            color: #71AB44;
+            font-weight: bold;
+        }
+        .white-btn:hover:not(.disable-hover) {
+            background-color: #fff !important;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            padding: 0 20px;
+            border-radius: 5px;
+            border: 1px solid #7489bb;
+            color: #fff;
+            background-color: #5772a7;
+        }
+
+        .text {
+            padding: 5px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        #fb-box, #gp-box {
+            text-align: center;
+            img {
+                height: 100%;
+                width: auto;
+                padding-right: 20px;
+            }
+            button {
+                background-color: Transparent;
+                width: 100%;
+                padding: 10px 0;
+                color: #fff;
+                border: 2px solid #fff;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
+
+  ion-content div.container {
+    //display: flex;
+    //align-items: center;
+    //height: 100%;
+    .login-block {
+      margin-top: 6%
+    }
+  }
+
+}
+
+input::-moz-placeholder {
+  color: white;
+}
+
+input:-ms-input-placeholder {
+  color: white;
+}
+
+input::-webkit-input-placeholder {
+  text-indent: 0;
+  color: white;
+}
+
+.wd-green {
+    background-color: #71AB44
+}
+.w100 {
+    width: 100%;
+}
+
+.pt20 {
+    padding-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}

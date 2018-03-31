@@ -1,0 +1,6 @@
+<!-- Generated template for the NearPlaygroundsListComponent component -->
+<ion-list no-padding>
+  <ion-item no-padding no-lines *ngFor="let playground of playgrounds">
+    <playground-card [playground]="playground" (onCheckInEvent)="checkIn(playground)" (onShowMapEvent)="showOnMap(playground)" (onToggleFavoriteEvent)="toggleFavorite(playground)"></playground-card>
+  </ion-item>
+</ion-list>

@@ -1,0 +1,60 @@
+<!--
+  Generated template for the SearchOptionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <wagdag-header [title]="'Search Options'"></wagdag-header>
+</ion-header>
+
+<ion-content padding>
+  <div class="title">Buddy filter</div>
+  <ion-list>
+    <ion-item>
+      <ion-label text-wrap>Only show buddies</ion-label>
+      <ion-toggle [(ngModel)]="searchOptions.profile_friends_only" (ionChange)="change('profile_friends_only')"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <div class="title">Playground filter</div>
+  <ion-list>
+    <ion-item>
+      <ion-label text-wrap>Only show from my playgrounds</ion-label>
+      <ion-toggle [(ngModel)]="searchOptions.playground_favorites_only" (ionChange)="change('playground_favorites_only')"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <div class="title">Age filter</div>
+  <ion-list>
+    <ion-item>
+      <ion-label text-wrap>All ages</ion-label>
+      <ion-toggle [(ngModel)]="searchOptions.profile_age_all" (ionChange)="change('profile_age_all')"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Dogs under 2 years old</ion-label>
+      <ion-toggle [(ngModel)]="searchOptions.profile_age_under_2years_old" (ionChange)="change('profile_age_under_2years_old')"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Dogs over 2 years old</ion-label>
+      <ion-toggle [(ngModel)]="searchOptions.profile_age_over_2years_old" (ionChange)="change('profile_age_over_2years_old')"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <div class="title">Gender</div>
+  <ion-list>
+    <ion-item>
+      <ion-label text-wrap>All genders</ion-label>
+      <ion-toggle [(ngModel)]="searchOptions.profile_gender_all" (ionChange)="change('profile_gender_all')"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Male</ion-label>
+      <ion-toggle [(ngModel)]="searchOptions.profile_gender_male" (ionChange)="change('profile_gender_male')"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Female</ion-label>
+      <ion-toggle [(ngModel)]="searchOptions.profile_gender_female" (ionChange)="change('profile_gender_female')"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

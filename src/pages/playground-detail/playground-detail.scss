@@ -1,0 +1,73 @@
+page-playground-detail {
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .box-cover {
+    height: 200px;
+    background-color: #71AB44;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .avatar-image {
+    height: 40px;
+    width: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px gray;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .avatar-white-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .avatar-name {
+    font-size: 1.0em;
+    width: 100%;
+    font-weight: 600;
+    color: #000;
+  }
+
+  .avatar-more {
+    position: absolute;
+    bottom: 52%;
+    right: 0%;
+    font-size: 1.0em;
+    width: 100%;
+    color: #71ab44;
+  }
+
+  .box {
+    background-color: #fff;
+    padding: 0 10px !important;
+    margin: 0 !important;
+    line-height: 40px;
+    .text {
+      text-align: right;
+    }
+  }
+
+  .block-title {
+    font-size: 16px;
+    background-color: #f7f7f7;
+    text-transform: uppercase;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #5fac51;
+  }
+
+  .checkin-time {
+    font-size: 11px;
+  }
+}

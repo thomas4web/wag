@@ -1,0 +1,48 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <wagdag-header [title]="'Settings'"></wagdag-header>
+</ion-header>
+
+<ion-content padding>
+  <div class="title">Push Notifications</div>
+  <ion-list>
+    <ion-item>
+      <ion-label text-wrap>All</ion-label>
+      <ion-toggle [disabled]="settings.notify_all == null" [(ngModel)]="settings.notify_all" (ionChange)="change('notify_all')"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>When a dog logs into your favorite locations</ion-label>
+      <ion-toggle [disabled]="settings.notify_dog_checkin_fav_playground == null || settings.notify_all" [(ngModel)]="settings.notify_dog_checkin_fav_playground" (ionChange)="change('notify_dog_checkin_fav_playground')"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>When a friend logs into your favorite locations</ion-label>
+      <ion-toggle [disabled]="settings.notify_friend_checkin_fav_playground == null || settings.notify_all" [(ngModel)]="settings.notify_friend_checkin_fav_playground" (ionChange)="change('notify_friend_checkin_fav_playground')"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>When you get a chat message</ion-label>
+      <ion-toggle [disabled]="settings.notify_new_chat_message == null || settings.notify_all" [(ngModel)]="settings.notify_new_chat_message" (ionChange)="change('notify_new_chat_message')"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>When you get a friend request</ion-label>
+      <ion-toggle [disabled]="settings.notify_new_friend_request == null || settings.notify_all" [(ngModel)]="settings.notify_new_friend_request" (ionChange)="change('notify_new_friend_request')"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <div class="title">Profile Privacy</div>
+  <ion-list>
+    <ion-item>
+      <ion-label text-wrap>Breed</ion-label>
+      <ion-toggle [disabled]="settings.privacy_breed == null" [(ngModel)]="settings.privacy_breed" (ionChange)="change('privacy_breed')"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Health</ion-label>
+      <ion-toggle [disabled]="settings.privacy_health == null" [(ngModel)]="settings.privacy_health" (ionChange)="change('privacy_health')"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "wagdag",
+  "app_id": "fbf25369",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

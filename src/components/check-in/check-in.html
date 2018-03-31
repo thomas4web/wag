@@ -1,0 +1,31 @@
+<!-- Generated template for the CheckInComponent component -->
+<ion-card>
+
+  <form [formGroup]="checkinForm" (ngSubmit)="submitCheckIn(checkinForm)">
+  <ion-card-content>
+
+    <ion-list no-lines>
+      <ion-item>
+        <ion-input type="text" placeholder="Playground name *" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button type="button" tappable ion-button block (tap)="file.click()">Choose Image</button>
+        <input type="file" #file accept="image/*" (change)="fileChanged($event)" hidden>
+      </ion-item>
+    </ion-list>
+
+    <div class="mapContainer">
+      <google-maps [options]="mapComponentOptions" (onCurrentLocation)="onCurrentLocation($event)"></google-maps>
+    </div>
+
+    <div>
+      <button ion-button block type="submit" [disabled]="!enableCheckIn || !checkinForm.valid">Create playground</button>
+    </div>
+
+    <div *ngIf="checkedInSuccessful">
+      Playground created successful
+    </div>
+  </ion-card-content>
+  </form>
+
+</ion-card>

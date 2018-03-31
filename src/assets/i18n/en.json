@@ -1,0 +1,29 @@
+{
+    "HELLO": "hello {{value}}",
+
+    "search": {
+        "placeholder": "Search buddies & playgrounds"
+    },
+
+    "profile": {
+        "create_form": "Dog profile"
+    },
+
+    "news_feeds": {
+        "profile": {
+            "started_being_friends": "is now friend with {{profileName}}.",
+            "accepted_friend_request": "accepted your friend request."
+        },
+        "playground": {
+            "checked_in": "checked in {{playgroundName}}."
+        }
+    },
+
+    "response_messages": {
+        "errors": {
+            "profiles": {
+                "exists": "Your profile is already created."
+            }
+        }
+    }
+}
